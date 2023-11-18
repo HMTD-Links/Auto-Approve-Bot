@@ -7,11 +7,11 @@ class Config:
     BOT_TOKEN = getenv("BOT_TOKEN", "1234567891:rkndeveloperDEhdhyjjvjjftSEW")
     UPDATE_CHANNEL = getenv("UPDATE_CHANNEL", "RknDeveloper")
     UPDATECHANNEL_ID = int(getenv("UPDATECHANNEL_ID", "-1001819787652"))
-    ADMIN = list(map(int, getenv("ADMIN", "6151758586").split()))
+    ADMIN = list(map(int, getenv("ADMIN", "1391556668").split()))
     MONGO_URI = getenv("MONGO_URI", "")
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002120760645"))
     DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", None) == 'True'
-    CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
+    CHANNEL_ID = list(set(int(x) for x in str(getenv("CHANNEL_ID", "-1001871766752")).split()))
     
     #web response 
     WEBHOOK = bool(os.environ.get("WEBHOOK", True))
