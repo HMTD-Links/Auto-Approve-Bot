@@ -9,6 +9,8 @@ from configs import rkn1
 import random, asyncio
 import os
 
+CHANNEL_ID = rkn1.CHANNEL_ID
+DISABLE_CHANNEL_BUTTON = rkn1.DISABLE_CHANNEL_BUTTON
 
 # Main Process _ _ _ _ _ Users Send Massage 🥀__🥀 Please 😢 Give Credit
 
@@ -90,21 +92,13 @@ async def op(bot, m :Message):
         )
         await m.reply_text("**💞 Pʟᴇᴀsᴇ Jᴏɪɴ Mʏ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ Tᴏ Usᴇ Tʜɪs Bᴏᴛ!. Iғ Yᴏᴜ Jᴏɪɴᴇᴅ Cʟɪᴄᴋ Tʀʏ Aɢᴀɪɴ Bᴜᴛᴛᴏɴ Tᴏ Cᴏɴғɪʀᴍ. 🥀**".format(rkn1.UPDATE_CHANNEL), reply_markup=key)
 
-@Client.on_message(
-    filters.channel
-    & (
-        filters.document
-        | filters.video
-    ),
-    group=4,
-)
-async def channel_receive_handler(bot, broadcast):
-    if int(broadcast.chat.id) in rkn1.BANNED_CHANNELS:
-        await bot.leave_chat(broadcast.chat.id)
+@Client.on_message(filters.channel & (filters.document | filters.video) & filters.chat(CHANNEL_ID), group=4)
+async def channel_Button_creator(client: Client, message: Message):
+    if DISABLE_CHANNEL_BUTTON:
         return
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔥 Uploaded By", url=f'https://telegram.me/Star_Moviess_Tamil')]])
     try:
-        await bot.edit_message_reply_markup(reply_markup)
+        await message.edit_reply_markup(reply_markup)
     except Exception as e:
         print(e)
         pass 
