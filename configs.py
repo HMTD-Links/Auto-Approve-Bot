@@ -1,4 +1,4 @@
-from os import path, getenv
+from os import path, getenv, environ
 import os, time 
 
 class Config:
@@ -10,6 +10,7 @@ class Config:
     ADMIN = list(map(int, getenv("ADMIN", "6151758586").split()))
     MONGO_URI = getenv("MONGO_URI", "")
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002120760645"))
+    BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "-1001296894100")).split()))
     
     #web response 
     WEBHOOK = bool(os.environ.get("WEBHOOK", True))
