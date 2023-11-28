@@ -5,7 +5,7 @@ from configs import rkn1
 from pyrogram.types import Message
 
 
-@Client.on_message(filters.command("rknusers") & filters.user(rkn1.ADMIN))
+@Client.on_message(filters.command("stats") & filters.user(rkn1.ADMIN))
 async def dbtool(_, m : Message):
     xx = all_users()
     x = all_groups()
