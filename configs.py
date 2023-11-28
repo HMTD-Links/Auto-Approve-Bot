@@ -11,7 +11,7 @@ class Config:
     MONGO_URI = getenv("MONGO_URI", "")
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002120760645"))
     DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", None) == 'True'
-    CHANNEL_ID = list(set(int(x) for x in str(getenv("CHANNEL_ID", "-1001871766752")).split()))
+    CHANNEL_ID = list(set(int(x) for x in str(getenv("CHANNEL_ID", "-1001816164988 -1001562195772 -1001928370532 -1001824185044 -1001674410044 -1001849017994 -1001832085294 -1001733199020 -1001347977016 -1001715180239 -1001890039607")).split()))
     
     #web response 
     WEBHOOK = bool(os.environ.get("WEBHOOK", True))
