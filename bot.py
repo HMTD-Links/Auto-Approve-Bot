@@ -40,8 +40,10 @@ class Bot(Client):
         logging.info(rkn1.LOGO)
         await self.set_bot_commands(
                     [
-                        BotCommand("start", "Check that bot is alive or dead")
-                        
+                        BotCommand("start", "Check if 😊 I'm Alive"),
+                        BotCommand("stats", "Total Users 📊"),
+                        BotCommand("broadcast", "to Broadcast 💌 a Message to All Users"),
+                        BotCommand("restart", "Bot Restart & Re-Deploy Server.")
                         ]
         )
         for id in rkn1.ADMIN:
