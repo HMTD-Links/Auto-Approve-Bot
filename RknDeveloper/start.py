@@ -76,7 +76,7 @@ async def op(bot, m :Message):
             add_group(m.chat.id)
             await bot.send_message(
             rkn1.LOG_CHANNEL,
-            f"**--#NᴇᴡGʀᴏᴜᴘ @RknDeveloper--**\n\nCʜᴀɴɴᴇʟ & Gʀᴏᴜᴘ Iᴅ: {m.chat.id}\nTɪᴛʟᴇ: `{m.chat.title}`\nUɴ: @{m.chat.username}\n\nBʏ: {m.from_user.mention}"
+            f"**--#NᴇᴡGʀᴏᴜᴘ @Star_Bots_Tamil--**\n\nCʜᴀɴɴᴇʟ & Gʀᴏᴜᴘ Iᴅ: {m.chat.id}\nTɪᴛʟᴇ: `{m.chat.title}`\nUɴ: @{m.chat.username}\n\nBʏ: {m.from_user.mention}"
             )
             await m.reply_text("**❣️ Hᴇʟʟᴏ {}!\n\nWʀɪᴛᴇ Mᴇ Pʀɪᴠᴀᴛᴇ Fᴏʀ Mᴏʀᴇ Dᴇᴛᴀɪʟs.**".format(m.from_user.first_name), reply_markup=keyboar)
         print(m.from_user.first_name +" Is started Your Bot!")
