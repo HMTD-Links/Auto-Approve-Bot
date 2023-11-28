@@ -10,11 +10,11 @@ async def dbtool(_, m : Message):
     xx = all_users()
     x = all_groups()
     tot = int(xx + x)
-    await m.reply_text(text=f"""
-✨ Cʜᴀᴛs Sᴛᴀᴛs ✨
-🙋‍♂️ Tᴏᴛᴀʟ Usᴇʀs : `{xx}`
-👥 Tᴏᴛᴀʟ Gʀᴏᴜᴘs : `{x}`
-🚧 Tᴏᴛᴀʟ Usᴇʀs & Gʀᴏᴜᴘs : `{tot}` """)
+    await m.reply_text(text=f"""<b>
+✨ Chats Stats ✨
+🙋‍♂️ Total Users :- `{xx}`
+👥 Total Channels or Groups :- `{x}`
+🚧 Total Users & Channels or Groups :- `{tot}`</b>""")
 
 @Client.on_message(filters.command("restart") & filters.user(rkn1.ADMIN))
 async def restart_bot(b, m):
